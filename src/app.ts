@@ -1,1 +1,1 @@
-alert("config ok");
+console.log("config ok");
