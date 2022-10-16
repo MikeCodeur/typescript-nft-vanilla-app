@@ -129,8 +129,8 @@ function init(list = nftsList) {
   list.map((nftData) => {
     createCard(nftData);
   });
-  const input = document.querySelector(".input-search");
-  input?.addEventListener("input", handleChange);
+  const input = document.querySelector(".input-search") as HTMLInputElement;
+  input.addEventListener("input", handleChange);
 }
 
 init();
