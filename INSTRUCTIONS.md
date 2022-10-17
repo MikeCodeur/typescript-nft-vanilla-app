@@ -1,6 +1,6 @@
-# Construction d’une base de données de NFT
+# Cloner une Card
 
-### 💡 Construction d’une base de données de NFT
+### 💡 Cloner des Element du DOM avec TypeScript
 
 ## 📝 Tes notes
 
@@ -8,92 +8,36 @@ Detaille ce que tu as appris ici `src/instructions.md`ou sur une page [Notio
 
 ## Comprendre
 
-Nous allons maintenant avoir un comportement dynamique, avec des données diverses et variées venant d’une base de données. Généralement ces bases de données sont sur des serveurs et accessibles via des API (REST, GraphQL etc …). Pour notre exercices nous allons les stocker dans un `array`
+L’idée dans cette section et de savoir `cloner` une `card`. Nous allons avoir une `Card` HTML _‘vide’_ et _masquée_ qui nous servira de `card` de référence. Nous pourrons ensuite la dupliquer autant de fois que nécessaire en fonctions des résultats dans le formulaire de recherche.
 
-Avant de commencer nous allons modifier la config pour pouvoir gérer des modules JavaScript. Les modules permettent d’utiliser les `import / export` pour rendre notre code plus modulable.
+- Nous allons utiliser `cloneNode` qui permet de copier des noeud entier du DOM
 
-- La première étape est d’ajouter le `type="module"` à la balise `script`
-
-```bash
-<script src="./built/app.js" type="module" defer></script>
-```
-
-- Ensuite nous allons changer le type de module généré. Par default c’est \***\*`CommonJS`, nous allons le configurer en `**es2020`dans`tsconfig`
-
-```bash
-//tsconfig
-"module": "es2020"
-```
-
-Pour utiliser ton code `exercice` ou la `solution` tu n’auras plus commenter / décommenter
-
-```tsx
-// fichier app.ts
-
-// Exercice
-// import init from "./app.exercice.js";
-
-// Solution
-import init from "./app.final.js";
-```
+📑 Le lien vers la doc de [cloneNode](https://www.w3schools.com/jsref/met_node_clonenode.asp)
 
 ## Exercice
 
-👨‍✈️ Hugo le chef de projets nous informe que les données venant des développeurs backend via des API ne sont pas prête mais que nous connaissons le format d’échanges. Il s’agit d’un tableau contenant plusieurs objets correspondant à des cards.
+🐶 Dans un premier temps supprime les `cards` en trop pour ne garder qu’une seule `card` qui sera la `card` de référence. Ensuite wrap cette `card` d’une div masquée pour ne plus l’afficher : utilise un `style : display: none` : Aucune card ne devrait maintenant être visible
 
-```bash
-- title: string;
-- description: string;
-- creator: string;
-- img: string;
-- price: string;
-- expire: string;
-- avatar: string;
+```html
+<!-- index.html -->
+<div style="display: none">
+  <section class="main-card">...</section>
+</div>
 ```
 
-🐶 dans cet exercice tu vas devoir définir un type `nftType` et créé un array avec 6 éléments minimum. Choisis valeurs les plus varié possibles (nom, prix author)
+🐶 Dans un deuxième temps tu vas devoir créer une fonction qui clone la `card` de référence
 
-- La description ne dois pas dépasser les 145 charactères
-- Utilise le dossier `/images/avartar` pour avoir des avatars varié
-- Utilise `/images/primate 1 2 3 4 5 6.png` pour avoir des images variés
+- Créé une fonction `cloneCard` qui clone la `card` de référence.
 
-fait un console log pour vérifier que tout fonctionne correctement
+Fichier :
 
-<aside>
-⚠️ Pour l’exercice nous avons couper`app.ts` en 2 fichier `src/app.exercise.ts` et la solution dans `src/app.final.ts`. Modifie l’import dans `app.ts` pour switcher vers la solution
+- `/src/app.ts`
+- `/index.html`
 
-</aside>
+## Aller plus loin
 
-<aside>
-💡 pense à lancer le watcher typescript avec `tsc -w`
-
-</aside>
-
-Fichier
-
-- `src/app.exercice.ts`
-
-## Bonus
-
-### 1. 🚀 Import de types
-
-Les types sont souvent utiliser plusieurs fois dans une application, il peut être judicieux de le mettre dans un fichier à part.
-
-🐶 Dans cette exercice déplace le type `nftType` dans un répertoire `/types/types.ts`
-
-Et importe le dans `app.ts` de la manière suivante
-
-```tsx
-import { nftType } from "./types/types";
-```
-
-Fichiers :
-
-- `src/app.exercice.ts`
-- `src/types/types.exercise.ts`
-
-###
+📑 Le lien vers la doc cloneNode
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=03%20BDD%20NFT)
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=04%20Cloner%20Card).

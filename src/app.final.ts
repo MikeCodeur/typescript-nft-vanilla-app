@@ -1,12 +1,4 @@
-type nftType = {
-  title: string;
-  description: string;
-  creator: string;
-  img: string;
-  price: string;
-  expire: string;
-  avatar: string;
-};
+import { nftType } from "./types/types";
 
 const nftsList: nftType[] = [
   {
@@ -68,6 +60,16 @@ const nftsList: nftType[] = [
   },
 ];
 
+function cloneCard() {
+  const cardContainer = document.querySelector(".main-card") as Element;
+  const clone = cardContainer.cloneNode(true);
+  document.querySelector(".card-container")?.appendChild(clone);
+  return clone;
+}
+
 export default function init() {
   console.log(nftsList);
+  // const card = cloneCard();
+  // const card2 = cloneCard();
+  // const card3 = cloneCard();
 }

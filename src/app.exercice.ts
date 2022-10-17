@@ -1,24 +1,8 @@
-// 🐶 déclare un Type 'nftType' ayant toutes les propriété d'un nft affiché dans la card
-// - title: string;
-// - description: string;
-// - creator: string;
-// - img: string;
-// - price: string;
-// - expire: string;
-// - avatar: string;
+// 🐶 Le début de l'exercice est en bas de page
 
-type nftType = {
-  title: string;
-  description: string;
-  creator: string;
-  img: string;
-  price: string;
-  expire: string;
-  avatar: string;
-};
+import { nftType } from "./types/types";
 
-// 🐶 Change le type Any pour le bon type (un array de nftType)
-const nftsList: any = [
+const nftsList: nftType[] = [
   {
     title: "Donkey #3429",
     description:
@@ -29,11 +13,67 @@ const nftsList: any = [
     expire: "10 days left",
     avatar: "/images/avatar/25.jpg",
   },
-  // 🐶 Ajoute au moins 5 autres NFT avec des noms, prix et descriptions differences
-  // 📝 rappel : des images d'avatar se trouvent dans /images/avatar
-  // des images de NFT dans /images/primate 1 2 3 4 5 6.png
+  {
+    title: "Dolly #1546",
+    description: "Makak Our Equilibrium collection promotes balance and calm.",
+    creator: "John doe",
+    img: "/images/primate2.png",
+    price: "0.041 ETH",
+    expire: "3 days left",
+    avatar: "/images/avatar/18.jpg",
+  },
+  {
+    title: "Makak #2643",
+    description: "'Fever Dream' by tiffatronn",
+    creator: "Dam Abramov",
+    img: "/images/primate3.png",
+    price: "0.005 ETH",
+    expire: "6 days left",
+    avatar: "/images/avatar/50.jpg",
+  },
+  {
+    title: "Ouran #3434",
+    description: "The Hollows are at your service.",
+    creator: "Mark Z",
+    img: "/images/primate4.png",
+    price: "0.154 ETH",
+    expire: "4 days left",
+    avatar: "/images/avatar/85.jpg",
+  },
+  {
+    title: "Outan #9876",
+    description:
+      "MadSkullz #5390 is one of the 6666 NFTs from MadSkullz Collection that are joining SkullzCity to fight for Freedomz.",
+    creator: "Jules P",
+    img: "/images/primate5.png",
+    price: "0.099 ETH",
+    expire: "27 days left",
+    avatar: "/images/avatar/90.jpg",
+  },
+  {
+    title: "Dizzi #3856",
+    description:
+      "Please be aware that there are characters that look identical or very similar to English letters",
+    creator: "Robert Z",
+    img: "/images/primate6.png",
+    price: "0.878 ETH",
+    expire: "1 days left",
+    avatar: "/images/avatar/90.jpg",
+  },
 ];
+
+// 🐶 créé une fonction "cloneCard"
+// - aucun parmètre d'entrée
+// - retourne l'objet cloner
+
+// Détail de la fonction :
+// - récupère le premier element ayant la class ".main-card" avec 'querySelector' (pense au cast)
+// - clone cet element dans une variable 'clone' grace à 'cloneNode'
+// - 📑 Doc CloneNode https://www.w3schools.com/jsref/met_node_clonenode.asp
+// - Ajoute le clone dans le container de cards ".card-container" grace à 'querySelector' et  'appendChild'
+// - 📑 Doc appendchild /www.w3schools.com/jsref/met_node_appendchild.asp
 
 export default function init() {
   console.log(nftsList);
+  // 🐶 Appel ici plusieurs fois la fonction cloneCard() et verifie si les cards s'ajoutent à l'écran
 }

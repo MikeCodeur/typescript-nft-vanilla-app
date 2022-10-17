@@ -1,5 +1,10 @@
-// Exercice
-export * from "./types.exercise.js";
-
-// 🚀 Import de types
-//export * from "./types.bonus-1.js";
+type nftType = {
+  title: string;
+  description: string;
+  creator: string;
+  img: string;
+  price: string;
+  expire: string;
+  avatar: string;
+};
+export { nftType };
