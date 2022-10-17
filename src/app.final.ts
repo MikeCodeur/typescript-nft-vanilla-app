@@ -72,4 +72,5 @@ export default function init() {
   const card = cloneCard();
   const card2 = cloneCard();
   const card3 = cloneCard();
+  const card4 = cloneCard();
 }

@@ -12,7 +12,8 @@
     <main class="container">
       <input type="text" class="input-search" />
       <div class="card-container">
-        <!-- 🐶 wrap cette section d'une div style display none pour ne plus la voir à l'écran -->
+        <!-- 🐶 wrap cette section "main-card" d'une div style display none pour ne plus la voir à l'écran -->
+        <!-- 🐶 déplace la section "main-card" après la div 'card-container' car 'card-container' ne doit contenir que des vraies data   -->
         <section class="main-card">
           <div class="image-container">
             <img
@@ -56,7 +57,7 @@
             </div>
           </div>
         </section>
-        <!-- ⛏️ supprime cette <section> -->
+        <!-- ⛏️ supprime cette <section>, card de demonstration nous ne l'utilseront plus -->
         <section class="main-card">
           <div class="image-container">
             <img
@@ -100,7 +101,7 @@
             </div>
           </div>
         </section>
-        <!-- ⛏️ supprime cette <section> -->
+        <!-- ⛏️ supprime cette <section> card de demonstration nous ne l'utilseront plus-->
         <section class="main-card">
           <div class="image-container">
             <img
