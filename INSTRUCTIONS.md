@@ -1,63 +1,65 @@
-# Initialisation du projet
+# Création HTML CSS - Card NFT
 
-### 💡 Description longue de l'exercice
+### 💡 Création de la partie HTML CSS de la page et de la card NFT
 
 ## 📝 Tes notes
 
-Detaille ce que tu as appris ici `src/exercise/01.md`ou sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Detaille ce que tu as appris ici `src/instruction.md`ou sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Comme nous l’avons vu dans les modules précédents, pour utiliser TypeScript dans un projet JavaScript, il faut l’initialiser avec de la configuration.
-
-Dans notre HTML nous allons appeler notre fichier app.js dans le répertoire :
-
-```html
-<script src="./built/app.js" defer></script>
-```
-
-Pour la solution
+Avant de faire des actions en TypeScript il nous faut une base statique en HTML CSS. Nous allons donc créé notre structure de page. Il s’agit ici de faire un page simple avec un champs input de recherche de NFT et une Card NFT avec tous ces détails
 
 ## Exercice
 
-Nous voulons la configuration suivantes.
+👨‍✈️ Hugo le chef de projet te demande démarrer ce nouveau projet. Il s’agit d’une simple page WEB qui permet de faire des recherches de NFT. Hugo nous indique que certaines ressources : images, avatar, css nous sont fournis pour gagner du temps , il faut donc appliquer les bonne classes CSS
 
-- Les fichiers sources dans le dossier `/src`
-- Les fichiers compilés dans le dossier `/built`
-- Pourvoir utiliser les version avancés de ECMAScript (ES2015 min)
+Les éléments dans notre page sont :
 
-🐶 Initialise le projet avec
+- Container principale
 
 ```bash
-tsc --init
+container principal (class="container")
+- champs de saisie (class="input-search")
+- container de cards (class="card-container")
+    - une/des card(s)
 ```
 
-Modifie le fichier `tsconfig.json` et ajoute
+- Details d’un card
 
 ```bash
-"target": "es2015"
-"outDir": "./built"
-"rootDir": "./src"
+Section de la card (class="main-card")
+- image de card avec overlay (class="image-container" et "overlay" "view")
+- container de texte (class="text-container")
+	- Titre de la card (class="title")
+	- Description (class="description")
+	- Prix et expiration (class="eth-info" "info" "icon" "eth" "expire")
+	- Createur  (class="creator-info" "avatar" "creator-text" "creator-nam")
+
 ```
 
-Créé un fichier `App.ts` dans `src` avec une instruction basique (`console.log(), alert()` …)
-
-Compile le résultat avec
+- Un Footer
 
 ```bash
-tsc -w
+footer (class="main-card")
 ```
 
-Dans HTML ajoute
+Fichiers :
 
-```html
-<script src="./built/app.js" defer></script>
-```
+- `/index.exercice.html`
 
-Et vérifie que ton instruction est exécuté correctement
+## Bonus
 
-📑 Le lien vers la doc [TSConfig](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+### 1. 🚀 Responsivité
+
+Duplique les Card pour vérifier le bon affichage de plusieurs cards dans notre page.
+
+- Vérifie / adapte en version mobile tablette
+
+## Aller plus loin
+
+📑 Le lien vers la doc [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-react-avis).
+Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=02%20HTML%20CSS)

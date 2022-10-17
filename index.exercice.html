@@ -5,32 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mike Codeur | NFT Search preview card component</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <!-- 🐶 Applique le fichier `css/styles.css` à notre page HTML dans le HEAD -->
     <script src="./built/app.js" defer></script>
   </head>
   <body>
-    <main class="container">
-      <input type="text" class="input-search" />
-      <div class="card-container">
-        <section class="main-card">
-          <div class="image-container">
+    <!-- 🐶 Ajoute la class 'container' à la balise <main> - C'est notre container principal  -->
+    <main>
+      <!-- 🐶 créé un champ text avec la class 'input-search' -->
+
+      <!-- 🐶 Créé le container de cards
+        - Ajoute la class "card-container" à la balise <div> -->
+      <div>
+        <!-- 🐶 Ajoute la class 'main-card' à la balise <section> - C'est notre container de card -->
+        <section>
+          <!-- ⛏️ décommente les lignes ci dessous pour afficher l'image et le overlay -->
+          <!-- <div class="image-container">
             <img
               src="images/image-equilibrium.jpg"
               alt="nft"
               class="main-image"
             />
             <div class="overlay"></div>
-            <img src="images/icon-view?svg" alt="view icon" class="view" />
-          </div>
-          <div class="text-container">
-            <h1 class="title">Equilibrium #3429</h1>
-            <p class="description">
-              Our Equilibrium collection promotes balance and calm.
-            </p>
-            <div class="eth-info">
+            <img src="images/icon-view.svg" alt="view icon" class="view" />
+          </div> -->
+
+          <!-- 🐶 Ajoute la class 'text-container' à la balise <div> - C'est notre container de texte  -->
+          <div>
+            <!-- 🐶 créé un Title avec la classe 'title' -->
+            <!-- 🐶 créé un Paragraph pour la description avec la classe 'description' -->
+
+            <!-- ⛏️ décommente les lignes ci dessous pour afficher le prix et l'expiration -->
+            <!-- <div class="eth-info">
               <div class="info">
                 <img
-                  src="images/icon-etherum.svg"
+                  src="images/icon-ethereum.svg"
                   alt="ETH"
                   class="icon"
                 /><span class="eth">0.065 ETH</span>
@@ -42,25 +50,21 @@
                   class="icon"
                 /><span class="expire">3 days left</span>
               </div>
-            </div>
-            <div class="creator-info">
-              <img
-                src="images/image-avatar.png"
-                alt="Jules Wyvern"
-                class="avatar"
-              />
-              <p class="creator-text">
-                Creation of <span class="creator-name">Jules Wyvern</span>
-              </p>
-            </div>
+            </div> -->
+
+            <!-- 🐶 créé un div pour l'avatar avec la classe "creator-info"   -->
+            <!-- 🐶 Ajoute dans cette div une image avec la classe avatar et src : "images/image-avatar.png"  -->
+            <!-- 🐶 Ajoute dans cette div un paragraphe avec la classe "creator-text" et le texte "Creation of" -->
+            <!-- 🐶 Ajoute dans le paragraphe un span avec la classe "creator-name" et met le nom du creator Jules Wyvern  -->    
+              
+            </div> 
           </div>
         </section>
       </div>
     </main>
-
-    <footer class="attribution">
-      Formation TypeScript
-      <a href="https://www.mikecodeur.com" target="_blank">Mike Codeur</a>.
-    </footer>
+    
+    <!-- 🐶 créé un footer  avec la classe "attribution"   -->
+    
   </body>
 </html>
+<!-- 🐶 Applique le fichier `css/styles.css` à notre page HTML dans le HEAD -->
