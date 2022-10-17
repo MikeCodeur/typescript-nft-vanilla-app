@@ -1,20 +1,12 @@
 import { nftType } from "./types/types";
 import { nftsList } from "./bdd/nft.js";
 
-// 🐶 Fais une fonction clearCard
 function clearCards() {
-  // 🐶 récupère le ".card-container" et affecte le dans une variable 'cardsContainer'
-  // const cardsContainer = ...
-  //
-  // 'cardsContainer' contient une liste d'enfants 'child' - normalement toutes nos cards
-  // Tu vas devoir supprimer tous les enfants contenus dans 'cardsContainer'
-  //
-  // Pour supprimer un child :
-  // - 📝 doc 'removechild' : https://www.w3schools.com/jsref/met_node_removechild.asp
-  // tu peux par exemple utiliser une boucle 'while' et "firstChild"
-  // - 📝 doc 'firstChild' : https://www.w3schools.com/jsref/prop_node_firstchild.asp
+  const cardsContainer = document.querySelector(".card-container");
+  while (cardsContainer?.firstChild) {
+    cardsContainer.removeChild(cardsContainer.firstChild);
+  }
 }
-// 🐶 appelle 'clearCards' dans init() en bas
 
 function cloneCard() {
   const cardContainer = document.querySelector(".main-card") as Element;
@@ -68,15 +60,12 @@ function handleChange(event: Event) {
 
 export default function init(list = nftsList) {
   console.log(nftsList);
-  // 🐶 appelle 'clearCards'
+  clearCards();
   list.map((nftData) => {
     createCard(nftData);
   });
-  // 🐶 appelle à nouveau 'clearCards' pour etre sur que plusieurs cycle
-  // de creations / desctructions fonctionnent sans problème
-  //
-  // ⛏️ decommente ce code pour afficher à nouveau des card
-  // list.map((nftData) => {
-  //   createCard(nftData);
-  // });
+  clearCards();
+  list.map((nftData) => {
+    createCard(nftData);
+  });
 }
