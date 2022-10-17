@@ -60,6 +60,7 @@ function handleChange(event: Event) {
 
 export default function init(list = nftsList) {
   console.log(nftsList);
+  clearCards();
   list.map((nftData) => {
     createCard(nftData);
   });

@@ -1,6 +1,6 @@
-# Remplir une Card avec les données
+# Supprimer toutes les cards
 
-### 💡 Remplir une Card avec les données
+### 💡 Savoir détruire des éléments du DOM
 
 ## 📝 Tes notes
 
@@ -8,45 +8,34 @@ Detaille ce que tu as appris ici `src/instructions.md`ou sur une page [Notio
 
 ## Comprendre
 
-Nous avons vu précédemment comment cloner une `card`, nous allons maintenant avoir besoin de la remplir avec les données NFT venant de notre BDD.
-
-- Pour simplifier la lisibilité du code nous avons déplacer `nftList` dans `/src/bdd/nft.ts`. On peut maintenant l’utiliser directement de la manière suivante :
+Notre application va devoir afficher des NFT mais nous allons également devoir en supprimer à l’écran lors de recherche par nom. Nous allons donc devoir faire une fonction qui supprime des `cards` et l’appeler au démarrage dans `init()`
 
 ```tsx
-import { nftsList } from "./bdd/nft";
+function clearCards() {}
 ```
 
 ## Exercice
 
-🐶 Dans cet exercice tu vas devoir créer une super fonction qui appelle `cloneCard` et `populateCard`
+🐶 Créé une fonction `clearCards`qui va supprimer tous les `Elements` enfants du container de cards : `card-container`.
 
-Exemple :
+- Pour cela tu vas devoir récupérer ce container
+- le parcourir avec une boucle `while`
+- Tant qu’il y a un enfant (`firstChild`), on le supprime
+- On le supprime avec `removechild`
 
-```tsx
-function createCard(data: any) {
-  const card = cloneCard();
-  populateCard(card, data);
-}
-```
+📝 Le lien vers la doc `firstChild` : [https://www.w3schools.com/jsref/prop_node_firstchild.asp](https://www.w3schools.com/jsref/prop_node_firstchild.asp)
 
-## Bonus
+📝 Le lien vers la doc `removechild` : [https://www.w3schools.com/jsref/met_node_removechild.asp](https://www.w3schools.com/jsref/met_node_removechild.asp)
 
-### 1. 🚀 Afficher toutes les cards dynamiquement
+<aside>
+💡 Dans la fonction `init()` appelle clearCards() puis recréé des cards plusieurs fois pour s’assurer qu’il n’y a pas de problème
 
-Plutôt que d’appeler de manière statique chaque création de `card`
+</aside>
 
-```tsx
-createCard(nftsList[0]);
-createCard(nftsList[1]);
-...
-```
+Fichier :
 
-🐶 Parcours tous les éléments `nftsList` et affiche les à l’écran
-
-- utilise `.map`
-
-###
+- `src/app.ts`
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=05%20Remplir%20CardNFT)
+Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=06%20Remove%20Cards).
