@@ -1,6 +1,13 @@
 import { nftType } from "./types/types";
 import { nftsList } from "./bdd/nft.js";
 
+function clearCards() {
+  const cardsContainer = document.querySelector(".card-container");
+  while (cardsContainer?.firstChild) {
+    cardsContainer.removeChild(cardsContainer.firstChild);
+  }
+}
+
 function cloneCard() {
   const cardContainer = document.querySelector(".main-card") as Element;
   const clone = cardContainer.cloneNode(true);
@@ -38,8 +45,26 @@ function createCard(data: nftType) {
   populateCard(card as Element, data);
 }
 
-export default function init() {
+function handleChange(event: Event) {
+  const target = event.target as HTMLInputElement;
+
+  const filteredList = nftsList.filter((nft) => {
+    return (
+      nft.title.toLowerCase()?.includes(target.value.toLowerCase()) ||
+      nft.description.toLowerCase().includes(target.value.toLowerCase()) ||
+      nft.creator.toLowerCase().includes(target.value.toLowerCase())
+    );
+  });
+  init(filteredList);
+}
+
+export default function init(list = nftsList) {
   console.log(nftsList);
-  createCard(nftsList[0]);
-  createCard(nftsList[1]);
+  list.map((nftData) => {
+    createCard(nftData);
+  });
+  clearCards();
+  list.map((nftData) => {
+    createCard(nftData);
+  });
 }
