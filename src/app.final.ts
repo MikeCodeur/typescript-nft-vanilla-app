@@ -69,7 +69,7 @@ function cloneCard() {
 
 export default function init() {
   console.log(nftsList);
-  // const card = cloneCard();
-  // const card2 = cloneCard();
-  // const card3 = cloneCard();
+  const card = cloneCard();
+  const card2 = cloneCard();
+  const card3 = cloneCard();
 }
