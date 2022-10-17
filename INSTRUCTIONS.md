@@ -1,6 +1,6 @@
-# Cloner une Card
+# Remplir une Card avec les données
 
-### 💡 Cloner des Element du DOM avec TypeScript
+### 💡 Remplir une Card avec les données
 
 ## 📝 Tes notes
 
@@ -8,36 +8,45 @@ Detaille ce que tu as appris ici `src/instructions.md`ou sur une page [Notio
 
 ## Comprendre
 
-L’idée dans cette section et de savoir `cloner` une `card`. Nous allons avoir une `Card` HTML _‘vide’_ et _masquée_ qui nous servira de `card` de référence. Nous pourrons ensuite la dupliquer autant de fois que nécessaire en fonctions des résultats dans le formulaire de recherche.
+Nous avons vu précédemment comment cloner une `card`, nous allons maintenant avoir besoin de la remplir avec les données NFT venant de notre BDD.
 
-- Nous allons utiliser `cloneNode` qui permet de copier des noeud entier du DOM
+- Pour simplifier la lisibilité du code nous avons déplacer `nftList` dans `/src/bdd/nft.ts`. On peut maintenant l’utiliser directement de la manière suivante :
 
-📑 Le lien vers la doc de [cloneNode](https://www.w3schools.com/jsref/met_node_clonenode.asp)
+```tsx
+import { nftsList } from "./bdd/nft";
+```
 
 ## Exercice
 
-🐶 Dans un premier temps supprime les `cards` en trop pour ne garder qu’une seule `card` qui sera la `card` de référence. Ensuite wrap cette `card` d’une div masquée pour ne plus l’afficher : utilise un `style : display: none` : Aucune card ne devrait maintenant être visible
+🐶 Dans cet exercice tu vas devoir créer une super fonction qui appelle `cloneCard` et `populateCard`
 
-```html
-<!-- index.html -->
-<div style="display: none">
-  <section class="main-card">...</section>
-</div>
+Exemple :
+
+```tsx
+function createCard(data: any) {
+  const card = cloneCard();
+  populateCard(card, data);
+}
 ```
 
-🐶 Dans un deuxième temps tu vas devoir créer une fonction qui clone la `card` de référence
+## Bonus
 
-- Créé une fonction `cloneCard` qui clone la `card` de référence.
+### 1. 🚀 Afficher toutes les cards dynamiquement
 
-Fichier :
+Plutôt que d’appeler de manière statique chaque création de `card`
 
-- `/src/app.ts`
-- `/index.html`
+```tsx
+createCard(nftsList[0]);
+createCard(nftsList[1]);
+...
+```
 
-## Aller plus loin
+🐶 Parcours tous les éléments `nftsList` et affiche les à l’écran
 
-📑 Le lien vers la doc cloneNode
+- utilise `.map`
+
+###
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=04%20Cloner%20Card).
+Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=05%20Remplir%20CardNFT)

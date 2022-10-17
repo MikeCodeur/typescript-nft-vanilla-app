@@ -40,6 +40,7 @@ function createCard(data: nftType) {
 
 export default function init() {
   console.log(nftsList);
-  createCard(nftsList[0]);
-  createCard(nftsList[1]);
+  nftsList.map((nftData) => {
+    createCard(nftData);
+  });
 }

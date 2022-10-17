@@ -1,64 +1,6 @@
+// 🐶 début de l'exercice en bas de fichier
 import { nftType } from "./types/types";
-
-const nftsList: nftType[] = [
-  {
-    title: "Donkey #3429",
-    description:
-      "Collection of 10,000 Primates facilitating a seamless adoption of the web3 space through community fueled ventures and collaborations.",
-    creator: "Mike Codeur",
-    img: "/images/primate1.png",
-    price: "0.341 ETH",
-    expire: "10 days left",
-    avatar: "/images/avatar/25.jpg",
-  },
-  {
-    title: "Dolly #1546",
-    description: "Makak Our Equilibrium collection promotes balance and calm.",
-    creator: "John doe",
-    img: "/images/primate2.png",
-    price: "0.041 ETH",
-    expire: "3 days left",
-    avatar: "/images/avatar/18.jpg",
-  },
-  {
-    title: "Makak #2643",
-    description: "'Fever Dream' by tiffatronn",
-    creator: "Dam Abramov",
-    img: "/images/primate3.png",
-    price: "0.005 ETH",
-    expire: "6 days left",
-    avatar: "/images/avatar/50.jpg",
-  },
-  {
-    title: "Ouran #3434",
-    description: "The Hollows are at your service.",
-    creator: "Mark Z",
-    img: "/images/primate4.png",
-    price: "0.154 ETH",
-    expire: "4 days left",
-    avatar: "/images/avatar/85.jpg",
-  },
-  {
-    title: "Outan #9876",
-    description:
-      "MadSkullz #5390 is one of the 6666 NFTs from MadSkullz Collection that are joining SkullzCity to fight for Freedomz.",
-    creator: "Jules P",
-    img: "/images/primate5.png",
-    price: "0.099 ETH",
-    expire: "27 days left",
-    avatar: "/images/avatar/90.jpg",
-  },
-  {
-    title: "Dizzi #3856",
-    description:
-      "Please be aware that there are characters that look identical or very similar to English letters",
-    creator: "Robert Z",
-    img: "/images/primate6.png",
-    price: "0.878 ETH",
-    expire: "1 days left",
-    avatar: "/images/avatar/90.jpg",
-  },
-];
+import { nftsList } from "./bdd/nft.js";
 
 function cloneCard() {
   const cardContainer = document.querySelector(".main-card") as Element;
@@ -67,9 +9,54 @@ function cloneCard() {
   return clone;
 }
 
+// 🐶 change le type any par le bon type (un element du tableau 'nftsList')
+function createCard(data: any) {
+  // 🐶 Appelle la fonction 'cloneCard()' et affecte le clone dans une variable "card"
+  // ⛏️ décommente la fonction 'populateCard' : pense au cast
+  // populateCard(card, data);
+}
+
+// 🐶 change le type any par le bon type (un element du tableau 'nftsList')
+function populateCard(currentCard: Element, data: any) {
+  //   📝 pour rappel : data à les propriété suivantes
+  //   title: string;
+  //   description: string;
+  //   creator: string;
+  //   img: string;
+  //   price: string;
+  //   expire: string;
+  //   avatar: string;
+  // 🐶 tu vas devoir recuperer chaque element de la Card et y mettre la bonne valeur
+  // 🐶 Commençons par l'image
+  // - récupere avec 'querySelector' et la classe ".main-image" l'element image
+  // - ensuite affecte lui la valeur de src
+  // exemple :
+  // 🤖 img.src = data.img;
+  //
+  // 🐶 mais attention : 'querySelector' retourne un 'Element' et un 'Element' ne connais pas 'src'
+  // pense à caster de la bonne manière
+  // 📝 https://microsoft.github.io/PowerBI-JavaScript/interfaces/_node_modules_typedoc_node_modules_typescript_lib_lib_dom_d_.htmlimageelement.html
+  // 🐶 fais la même chose pour le titre
+  // - classe title
+  // - data.title
+  // exemple :
+  // 🤖 title.textContent = data.title;
+  // cast de la bonne manière
+  // 📝 https://microsoft.github.io/PowerBI-JavaScript/interfaces/_node_modules_typedoc_node_modules_typescript_lib_lib_dom_d_.htmlheadelement.html
+  // 🐶 fais la même chose pour la description
+  // - classe description
+  // - data.description;
+  // 🐶 fais la même chose pour le prix
+  // - classe eth
+  // - data.price;
+  // 🐶 fais la même chose pour l'expiration
+  // 🐶 fais la même chose pour le createur
+  // 🐶 fais la même chose pour l'avatar
+}
+
 export default function init() {
   console.log(nftsList);
-  const card = cloneCard();
-  const card2 = cloneCard();
-  const card3 = cloneCard();
+  // 🐶 Appelle 'createCard' avec le premier element du tableau 'nftsList'
+  // 🐶 Appelle 'createCard' avec le deuxieme element du tableau 'nftsList'
+  // 🐶 constate l'affichage à l'écran
 }
