@@ -1,6 +1,7 @@
 import { nftType } from "./types/types";
 import { nftsList } from "./bdd/nft.js";
 
+// 🐶 début de l'exercice en bas
 function clearCards() {
   const cardsContainer = document.querySelector(".card-container");
   while (cardsContainer?.firstChild) {
@@ -45,27 +46,41 @@ function createCard(data: nftType) {
   populateCard(card as Element, data);
 }
 
+// 🐶 implemente la fonction 'handleChange'
+// Change le type 'any' pour le bon type d'Event
 function handleChange(event: Event) {
-  const target = event.target as HTMLInputElement;
-
-  const filteredList = nftsList.filter((nft) => {
-    return (
-      nft.title.toLowerCase()?.includes(target.value.toLowerCase()) ||
-      nft.description.toLowerCase().includes(target.value.toLowerCase()) ||
-      nft.creator.toLowerCase().includes(target.value.toLowerCase())
-    );
-  });
-  init(filteredList);
+  // 🐶 pour récuperer la valeur du champs saisie en Javascript il suffit de faire
+  // 🤖
+  // const value = event.target.value
+  //
+  // Sauf qu'ici nous avons l'erreur : La propriété 'value' n'existe pas sur le type 'EventTarget'
+  // 🐶 il faut donc caster avec le bon Element : dans notre cas 'HTMLInputElement' pour avec accès 'value'
+  // 🐶 filtrage
+  // utilise la fonction 'filter' sur 'nftsList' avec le resultat dans une variable 'filteredList'
+  // règles de filtrage :
+  // - Insensible à la casse 🤖 `toLowerCase()`
+  // - Que 'value' soir présent dans au moins un des 3 champs
+  //   - title
+  //   - description
+  //   - creator
+  // 🐶 appelle 'init' avec 'filteredList' en parameter
 }
 
-export default function init(list = nftsList) {
+// 🐶 ajoute un paramètre 'list' à la fonction 'init', initialise par defaut à 'nftsList'
+export default function init() {
+  // 🐶 log list 'list' et non 'nftsList'
   console.log(nftsList);
+
+  // 🐶 récupère le champs 'input' : class ".input-search" et ajoute le dans une variable 'input'
+  const input = document.querySelector(".input-search") as HTMLInputElement;
+
+  // 🐶 Ajoute un 'eventListener' de type 'input' sur input grace à "addEventListener" spécifie lui 'handleChange'
+  // 📝 Lien doc addEventListnener https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+  // Attention à bien caster 'input' pour que la fonction 'addEventListnener' soit reconnue
+
   clearCards();
-  list.map((nftData) => {
-    createCard(nftData);
-  });
-  clearCards();
-  list.map((nftData) => {
+  // 🐶 n'utilise plus 'nftsList' (la liste complete) mais utilise 'list' la liste filtrée
+  nftsList.map((nftData) => {
     createCard(nftData);
   });
 }

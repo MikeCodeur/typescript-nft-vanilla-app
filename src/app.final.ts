@@ -46,24 +46,24 @@ function createCard(data: nftType) {
 }
 
 function handleChange(event: Event) {
-  const target = event.target as HTMLInputElement;
+  const value = (event.target as HTMLInputElement).value;
 
   const filteredList = nftsList.filter((nft) => {
     return (
-      nft.title.toLowerCase()?.includes(target.value.toLowerCase()) ||
-      nft.description.toLowerCase().includes(target.value.toLowerCase()) ||
-      nft.creator.toLowerCase().includes(target.value.toLowerCase())
+      nft.title.toLowerCase()?.includes(value.toLowerCase()) ||
+      nft.description.toLowerCase().includes(value.toLowerCase()) ||
+      nft.creator.toLowerCase().includes(value.toLowerCase())
     );
   });
   init(filteredList);
 }
 
 export default function init(list = nftsList) {
-  console.log(nftsList);
-  clearCards();
-  list.map((nftData) => {
-    createCard(nftData);
-  });
+  console.log(list);
+
+  const input = document.querySelector(".input-search") as HTMLInputElement;
+  input.addEventListener("input", handleChange);
+
   clearCards();
   list.map((nftData) => {
     createCard(nftData);

@@ -1,6 +1,6 @@
-# Supprimer toutes les cards
+# Recherche de cards
 
-### 💡 Savoir détruire des éléments du DOM
+### 💡Savoir rechercher / filtrer des éléments
 
 ## 📝 Tes notes
 
@@ -8,34 +8,43 @@ Detaille ce que tu as appris ici `src/instructions.md`ou sur une page [Notio
 
 ## Comprendre
 
-Notre application va devoir afficher des NFT mais nous allons également devoir en supprimer à l’écran lors de recherche par nom. Nous allons donc devoir faire une fonction qui supprime des `cards` et l’appeler au démarrage dans `init()`
+Nous avons préparer le terrain en affichant, supprimant des cards venant d’une BDD. Maintenant tu vas devoir les filtrer dynamiquement les NFT en fonction des termes de recherches.
+
+Algorithme :
 
 ```tsx
-function clearCards() {}
+- sur chaque nouvelle saisie dans le champs input
+- suppression de toutes les cards
+- filtre des éléments de la BDD qui matchent sur les critères
+	- nom
+	- description
+	- création
+- Affichage des cards filtrés
 ```
 
 ## Exercice
 
-🐶 Créé une fonction `clearCards`qui va supprimer tous les `Elements` enfants du container de cards : `card-container`.
+🐶 Pour pouvoir détecter un changement dans le champs `input` tu vas devoir ajouter un `eventListner` avec la fonction `addEventListener`
 
-- Pour cela tu vas devoir récupérer ce container
-- le parcourir avec une boucle `while`
-- Tant qu’il y a un enfant (`firstChild`), on le supprime
-- On le supprime avec `removechild`
+📑 Lien vers la doc [addEventListnener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
-📝 Le lien vers la doc `firstChild` : [https://www.w3schools.com/jsref/prop_node_firstchild.asp](https://www.w3schools.com/jsref/prop_node_firstchild.asp)
+```tsx
+input.addEventListener("input", handleChange);
+//handleChange fonction qui sera executée sur chaque saisie
+```
 
-📝 Le lien vers la doc `removechild` : [https://www.w3schools.com/jsref/met_node_removechild.asp](https://www.w3schools.com/jsref/met_node_removechild.asp)
+🐶 Utilise la fonction `filter` pour te retourner un `array` filtré
 
-<aside>
-💡 Dans la fonction `init()` appelle clearCards() puis recréé des cards plusieurs fois pour s’assurer qu’il n’y a pas de problème
+📑 Doc de [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
-</aside>
+🐶 Modifie la signature de la fonction `init()` pour qu’elle accepte un un paramètre `list` initialiser par défaut à `nftsList`. Appelle `init()` avec le tableau filtré sur chaque saisie de champs input
 
 Fichier :
 
 - `src/app.ts`
 
+##
+
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=06%20Remove%20Cards).
+Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=07%20Recherche%20NFT)
