@@ -1,5 +1,3 @@
-// 🐶 Le début de l'exercice est en bas de page
-
 import { nftType } from "./types/types";
 
 const nftsList: nftType[] = [
@@ -62,18 +60,16 @@ const nftsList: nftType[] = [
   },
 ];
 
-// 🐶 créé une fonction "cloneCard"
-// - aucun parmètre d'entrée
-// - retourne l'objet cloner
-
-// Détail de la fonction :
-// - récupère le premier element ayant la class ".main-card" avec 'querySelector' (pense au cast)
-// - clone cet element dans une variable 'clone' grace à 'cloneNode'
-// - 📑 Doc CloneNode https://www.w3schools.com/jsref/met_node_clonenode.asp
-// - Ajoute le clone dans le container de cards ".card-container" grace à 'querySelector' et  'appendChild'
-// - 📑 Doc appendchild /www.w3schools.com/jsref/met_node_appendchild.asp
+function cloneCard() {
+  const cardContainer = document.querySelector(".main-card") as Element;
+  const clone = cardContainer.cloneNode(true);
+  document.querySelector(".card-container")?.appendChild(clone);
+  return clone;
+}
 
 export default function init() {
   console.log(nftsList);
-  // 🐶 Appel ici plusieurs fois la fonction cloneCard() et verifie si les cards s'ajoutent à l'écran
+  const card = cloneCard();
+  const card2 = cloneCard();
+  const card3 = cloneCard();
 }
