@@ -1,65 +1,99 @@
-# Création HTML CSS - Card NFT
+# Construction d’une base de données de NFT
 
-### 💡 Création de la partie HTML CSS de la page et de la card NFT
+### 💡 Construction d’une base de données de NFT
 
 ## 📝 Tes notes
 
-Detaille ce que tu as appris ici `src/instruction.md`ou sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
+Detaille ce que tu as appris ici `src/instructions.md`ou sur une page [Notion](https://go.mikecodeur.com/course-notes-template)
 
 ## Comprendre
 
-Avant de faire des actions en TypeScript il nous faut une base statique en HTML CSS. Nous allons donc créé notre structure de page. Il s’agit ici de faire un page simple avec un champs input de recherche de NFT et une Card NFT avec tous ces détails
+Nous allons maintenant avoir un comportement dynamique, avec des données diverses et variées venant d’une base de données. Généralement ces bases de données sont sur des serveurs et accessibles via des API (REST, GraphQL etc …). Pour notre exercices nous allons les stocker dans un `array`
+
+Avant de commencer nous allons modifier la config pour pouvoir gérer des modules JavaScript. Les modules permettent d’utiliser les `import / export` pour rendre notre code plus modulable.
+
+- La première étape est d’ajouter le `type="module"` à la balise `script`
+
+```bash
+<script src="./built/app.js" type="module" defer></script>
+```
+
+- Ensuite nous allons changer le type de module généré. Par default c’est \***\*`CommonJS`, nous allons le configurer en `**es2020`dans`tsconfig`
+
+```bash
+//tsconfig
+"module": "es2020"
+```
+
+Pour utiliser ton code `exercice` ou la `solution` tu n’auras plus commenter / décommenter
+
+```tsx
+// fichier app.ts
+
+// Exercice
+// import init from "./app.exercice.js";
+
+// Solution
+import init from "./app.final.js";
+```
 
 ## Exercice
 
-👨‍✈️ Hugo le chef de projet te demande démarrer ce nouveau projet. Il s’agit d’une simple page WEB qui permet de faire des recherches de NFT. Hugo nous indique que certaines ressources : images, avatar, css nous sont fournis pour gagner du temps , il faut donc appliquer les bonne classes CSS
-
-Les éléments dans notre page sont :
-
-- Container principale
+👨‍✈️ Hugo le chef de projets nous informe que les données venant des développeurs backend via des API ne sont pas prête mais que nous connaissons le format d’échanges. Il s’agit d’un tableau contenant plusieurs objets correspondant à des cards.
 
 ```bash
-container principal (class="container")
-- champs de saisie (class="input-search")
-- container de cards (class="card-container")
-    - une/des card(s)
+- title: string;
+- description: string;
+- creator: string;
+- img: string;
+- price: string;
+- expire: string;
+- avatar: string;
 ```
 
-- Details d’un card
+🐶 dans cet exercice tu vas devoir définir un type `nftType` et créé un array avec 6 éléments minimum. Choisis valeurs les plus varié possibles (nom, prix author)
 
-```bash
-Section de la card (class="main-card")
-- image de card avec overlay (class="image-container" et "overlay" "view")
-- container de texte (class="text-container")
-	- Titre de la card (class="title")
-	- Description (class="description")
-	- Prix et expiration (class="eth-info" "info" "icon" "eth" "expire")
-	- Createur  (class="creator-info" "avatar" "creator-text" "creator-nam")
+- La description ne dois pas dépasser les 145 charactères
+- Utilise le dossier `/images/avartar` pour avoir des avatars varié
+- Utilise `/images/primate 1 2 3 4 5 6.png` pour avoir des images variés
 
-```
+fait un console log pour vérifier que tout fonctionne correctement
 
-- Un Footer
+<aside>
+⚠️ Pour l’exercice nous avons couper`app.ts` en 2 fichier `src/app.exercise.ts` et la solution dans `src/app.final.ts`. Modifie l’import dans `app.ts` pour switcher vers la solution
 
-```bash
-footer (class="main-card")
+</aside>
+
+<aside>
+💡 pense à lancer le watcher typescript avec `tsc -w`
+
+</aside>
+
+Fichier
+
+- `src/app.exercice.ts`
+
+## Bonus
+
+### 1. 🚀 Import de types
+
+Les types sont souvent utiliser plusieurs fois dans une application, il peut être judicieux de le mettre dans un fichier à part.
+
+🐶 Dans cette exercice déplace le type `nftType` dans un répertoire `/types/types.ts`
+
+Et importe le dans `app.ts` de la manière suivante
+
+```tsx
+import { nftType } from "./types/types";
 ```
 
 Fichiers :
 
-- `/index.exercice.html`
+- `src/app.exercice.ts`
+- `src/types/types.exercise.ts`
 
-## Bonus
-
-### 1. 🚀 Responsivité
-
-Duplique les Card pour vérifier le bon affichage de plusieurs cards dans notre page.
-
-- Vérifie / adapte en version mobile tablette
-
-## Aller plus loin
-
-📑 Le lien vers la doc [Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
+###
 
 ## 🐜 Feedback
 
-Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=02%20HTML%20CSS)
+Remplir le formulaire le [formulaire de FeedBack.](https://go.mikecodeur.com/cours-react-avis?entry.1912869708=TypeScript%20PRO&entry.1430994900=3.NFT-Vaniila&entry.533578441=03%20BDD%20NFT)
