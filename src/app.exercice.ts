@@ -53,23 +53,10 @@ function createCard(data: nftType) {
   populateCard(card as Element, data);
 }
 
-function handleChange(event: Event) {
-  const target = event.target as HTMLInputElement;
-
-  const filteredList = nftsList.filter((nft) => {
-    return (
-      nft.title.toLowerCase()?.includes(target.value.toLowerCase()) ||
-      nft.description.toLowerCase().includes(target.value.toLowerCase()) ||
-      nft.creator.toLowerCase().includes(target.value.toLowerCase())
-    );
-  });
-  init(filteredList);
-}
-
-export default function init(list = nftsList) {
+export default function init() {
   console.log(nftsList);
   // 🐶 appelle 'clearCards'
-  list.map((nftData) => {
+  nftsList.map((nftData) => {
     createCard(nftData);
   });
   // 🐶 appelle à nouveau 'clearCards' pour etre sur que plusieurs cycle
