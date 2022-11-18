@@ -7,16 +7,6 @@
 // - expire: string;
 // - avatar: string;
 
-type nftType = {
-  title: string;
-  description: string;
-  creator: string;
-  img: string;
-  price: string;
-  expire: string;
-  avatar: string;
-};
-
 // 🐶 Change le type Any pour le bon type (un array de nftType)
 const nftsList: any = [
   {
