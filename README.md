@@ -1,6 +1,5 @@
-
 <div>
-  <h1 align="center"><a href="https://go.mikecodeur.com/react-mastery">TypeScript PRO 🚀 ReactMastery.Dev</a></h1>
+  <h1 align="center"><a href="https://go.mikecodeur.com/typescript-pro">TypeScript Vanilla APP🚀 </a></h1>
   <strong>
     Module de la formation TypeScript PRO - Creation d'une app de recherche de NFT en JS (Vanilla)
   </strong>
@@ -8,14 +7,14 @@
     Création d'un app de recherche nft basé sur JS Vanilla et TypeScript
   </p>
 
-  <a href="https://go.mikecodeur.com/react-mastery">
+  <a href="https://go.mikecodeur.com/typescript-pro">
     <img 
       alt="Apprendre React"
       src="https://mikecodeur.com/mike/assets/courses/ts-pro.png"
     />
   </a>
  
-  <a href="https://go.mikecodeur.com/react-mastery" >
+  <a href="https://go.mikecodeur.com/typescript-pro" >
     <img width="100"
       alt="Apprendre React"
       src="https://mikecodeur.com/mike/assets/mikecodeur-trans.png"
@@ -26,20 +25,18 @@
 
 <hr />
 
-
 <!-- prettier-ignore-start -->
 [![Build Status][build-badge]][build]
 [![GPL 3.0 License][license-badge]][license]
 [![Netlify Status][netlify-badge]][netlify]
 <!-- prettier-ignore-end -->
 
-## Les prérequis 
+## Les prérequis
 
 - Les bases de HTML CSS JS
   ["Les bases de JavaScript"](https://www.youtube.com/watch?v=Tg1xZic-JQs&list=PLwWXkX8UsKlgkg0U_JH82p4bLSuAuTdof)
 - A lire
   ["Les bases de JavaScript"](https://developer.mozilla.org/fr/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
-
 
 ## Emojis Importants 🐶 📝 🤖 🚀 🐜 📑 ⛏️ 👨‍✈️ 🚨
 
@@ -76,7 +73,7 @@ Merci aux contributeurs
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-Ce projet suit les specifications 
+Ce projet suit les specifications
 [all-contributors](https://github.com/all-contributors/all-contributors)
 . Toutes les contributions sont les bienvenues!
 
