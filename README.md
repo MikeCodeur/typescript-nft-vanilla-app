@@ -1,5 +1,5 @@
 <div>
-  <h1 align="center"><a href="https://go.mikecodeur.com/typescript-pro">🚀 TypeScript PRO</a></h1>
+  <h1 align="center"><a href="https://go.mikecodeur.com/typescript-pro">TypeScript Vanilla APP🚀 </a></h1>
   <strong>
     Module de la formation TypeScript PRO - Creation d'une app de recherche de NFT en JS (Vanilla)
   </strong>
